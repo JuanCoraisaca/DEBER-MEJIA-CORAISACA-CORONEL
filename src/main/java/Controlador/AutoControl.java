@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class AutoControl {
     
-    private final AutoServicio autoServicio = new AutoServicio();
+    private final  AutoServicio autoServicio = new AutoServicio();
     
     
     public Auto crear(String [] args){
@@ -25,13 +25,12 @@ public class AutoControl {
         this.autoServicio.crear(auto);
         return auto;
     }
-    
-    public Auto buscarPorCodigo(int codigoAuto){
-        
+    public Auto buscarAuto(String arg){
+        return this.autoServicio.buscarPorCodigo(Integer.valueOf(arg));
     }
     
-    public Auto eliminar(String arg)
-    {
+    public Auto eliminar(String arg){
+        
         return this.autoServicio.eliminar(Integer.valueOf(arg));
     }
     
@@ -42,6 +41,8 @@ public class AutoControl {
         this.autoServicio.modificar(Integer.valueOf(args[0]), autoNuevo);
         return autoNuevo;
     }
+    
+    
     
     public List<Auto> listar(){
         return this.autoServicio.listar();
